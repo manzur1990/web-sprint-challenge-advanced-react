@@ -30,13 +30,51 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain how to build stateful class components.
 
+  <!-- In contrast to the most recent hooks component, with class components you will have to import "Compnent{}" from 'react', you will have to "extend" the component and inside the body you will add a "constructor()" followed by "super()" that will keep the state and it will be reference like "this.state". Then you will "render()" any other component you consume through this stateful component. example below:
+                     -->
+                                      class Main extends Component {
+                                        constructor() {
+                                        super()
+                                        this.state = {
+                                          books: []
+                                        }
+                                      }
+                                      render() {
+                                        <BooksList books={this.state.books} />
+                                      }
+                                      }
+
 2. Describe the different phases of the component lifecycle.
 
+     <!-- Initialization: initial values like state and props will be set, usually inside the constructor. 
+
+     Mounting: its when React compnents mouns on the DOM, meaning components render. these are the following methods used: 1.componentWillMount() 2.componentDidMount()
+
+     Updating: this pahse occurs after the mounting phase and any states that is updated, a rerender will take place in case of user interaction like a click.
+
+     Unmounting: this is the end of the lifcycle and the component will be removed from the DOM -->
+
+
 3. Demonstrate an understanding of class component lifecycle methods.
+    <!-- 1.componentWillMount()  - his method is called just before a compnents mounts to the DOM, then it will bem ounted
+
+    2.componentDidMount() -this method is called after the component gets mounted on the DOM. Like componentWillMount, it is called once in a lifecycle.
+
+    3.componentWillUnmount() -this method is called before the unmounting of the component takes place -->
 
 4. Define stateful logic.
+    <!-- is function that werehouses other functions that are passed down to other components -->
 
 5. Describe how to test a React component with React Testing Library.
+        <!-- 1. jest glogal function to write our tests, "test()"  used to run a test. Jest is going to be our 'test runner' -->
+
+        <!-- 2. test('renders App component without errors', () =>{
+         Render the App Component
+          render(<App />) -->
+
+        <!-- 3. query the virtual dom for an element and make an "assertion" about that element like so: 
+            expect(header).toBeInTheDocument() -->
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -101,14 +139,14 @@ Nothing needs to be done here. You _will_ have to navigate to the cart page in y
 
 The form is working, but it is currently controlled by local stateful logic. We want to control this form with a custom hook.
 
-- [ ] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic
+- [x] Build a custom hook called `useForm`, and use it in your CheckoutForm component to control the form's stateful logic
 
 _Note: You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step._
 
 #### Testing the Checkout Form
 
-- [ ] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
-- [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
+- [x] Build out the tests listed in `CheckoutForm.test.js`. You will need to make sure they are testing what the test title implies they are testing
+- [x] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working
 
 <hr/>
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
@@ -135,6 +173,6 @@ test("displays plants in cart", () => {
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete after receiving your pull-request
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo). **Please don't merge your own pull request**
+- [x] Add your team lead as a reviewer on the pull-request
+- [x] Your team lead will count the project as complete after receiving your pull-request
