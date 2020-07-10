@@ -14,6 +14,7 @@ componentDidMount() {
    //   - fetch data from the server endpoint - http://localhost:3333/plants
   axios.get('http://localhost:3333/plants')
   .then(res =>{
+    
     const plants = res.data.plantsData
   //   - set the returned plants array to this.state.plants
     this.setState({plants})
